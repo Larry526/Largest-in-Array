@@ -10,8 +10,21 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
-        NSLog(@"Hello, World!");
+        
+        NSArray *largestInArray = @[@3, @7, @6, @8];
+        
+        NSNumber *maxNumber = [largestInArray valueForKeyPath:@"@max.self"];
+        
+        NSLog(@"Numbers in Array: %@.", largestInArray);
+        NSLog(@"Largest number in array is: %@.", maxNumber);
+        
+        largestInArray = @[@7, @5, @6];
+        maxNumber = [largestInArray valueForKeyPath:@"@max.self"];
+        
+        NSLog(@"Numbers in Array: %@", largestInArray);
+        NSLog(@"Largest number in array is: %@.", maxNumber);
+        
     }
     return 0;
 }
+
